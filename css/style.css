@@ -1,0 +1,157 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+
+ul {
+  list-style: none;
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== HEADER & NAV ===== */
+header {
+  background-color: #1a6b4a;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #a8d5b9;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #e8f5ee 0%, #fff 100%);
+
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #1a6b4a;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #1a6b4a;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+
+
+/* ===== UTILITIES ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #1a6b4a;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+
+
+.btn:hover {
+  background-color: #145538;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
