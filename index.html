@@ -142,7 +142,7 @@
     .stats-band {
       background: var(--cream); border-bottom: 1px solid var(--cream-dark);
       padding: 56px 72px;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
     }
     .stat-item {
       text-align: center; padding: 0 24px;
@@ -407,6 +407,79 @@
       .partners-inner { padding: 0 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
+    /* ─── VISION/MISSION BAND ────────────────────────────── */
+    .mission-band {
+      background: var(--green-deep); padding: 80px 72px;
+      display: grid; grid-template-columns: 1fr 1px 1fr; gap: 64px; align-items: start;
+    }
+    .mission-divider { background: rgba(255,255,255,0.15); }
+    .mission-col h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--gold-light); margin-bottom: 16px; }
+    .mission-col p { color: rgba(255,255,255,0.72); font-size: 0.97rem; line-height: 1.85; }
+    .mission-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .mission-col ul li { display: flex; gap: 12px; align-items: flex-start; color: rgba(255,255,255,0.72); font-size: 0.92rem; line-height: 1.7; }
+    .mission-col ul li::before { content: '→'; color: var(--gold-light); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
+
+    /* ─── MILESTONES MINI ───────────────────────────────── */
+    .mini-milestones { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }
+    .mini-ms { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; position: relative; }
+    .mini-ms::before { content: ''; position: absolute; left: 15px; top: 28px; bottom: 0; width: 2px; background: var(--cream-dark); }
+    .mini-ms:last-child::before { display: none; }
+    .ms-dot { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--green-deep); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; border: 2px solid var(--cream-dark); z-index: 1; }
+    .ms-year { font-size: 0.75rem; font-weight: 700; color: var(--green-light); text-transform: uppercase; letter-spacing: 0.06em; }
+    .ms-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-top: 2px; }
+
+    /* ─── TEAM SECTION ──────────────────────────────────── */
+    .team-section { background: var(--green-deep); padding: 80px 72px; }
+    .team-section .section-tag { color: var(--gold-light); }
+    .team-section h2 { color: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
+    .team-tile {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 24px; text-align: center; transition: background 0.25s;
+    }
+    .team-tile:hover { background: rgba(255,255,255,0.1); }
+    .team-pct { font-family: var(--serif); font-size: 2.4rem; color: var(--gold-light); font-weight: 700; line-height: 1; }
+    .team-role { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .team-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 16px; overflow: hidden; }
+    .team-bar-fill { height: 100%; background: var(--gold-light); border-radius: 2px; }
+
+    /* ─── ACHIEVEMENTS ──────────────────────────────────── */
+    .achievements-section { background: var(--cream); padding: 80px 72px; }
+    .achieve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .achieve-card {
+      background: var(--white); border-radius: 8px; overflow: hidden;
+      border: 1px solid var(--cream-dark); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .achieve-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(107,8,8,0.1); }
+    .achieve-icon-row {
+      background: var(--green-deep); padding: 28px 32px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .achieve-icon { font-size: 1.8rem; }
+    .achieve-icon-title { font-family: var(--serif); font-size: 1.1rem; color: var(--white); line-height: 1.3; }
+    .achieve-body { padding: 24px 32px; }
+    .achieve-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+
+    /* ─── LESSONS BAND ──────────────────────────────────── */
+    .lessons-band { background: var(--white); padding: 72px 72px; }
+    .lessons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
+    .lesson-item { padding: 32px; border-left: 3px solid var(--green-light); }
+    .lesson-num { font-family: var(--serif); font-size: 2rem; color: var(--green-light); font-weight: 700; margin-bottom: 12px; }
+    .lesson-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; }
+
+    @media (max-width: 1024px) {
+      .mission-band { grid-template-columns: 1fr; }
+      .mission-divider { display: none; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .achieve-grid { grid-template-columns: repeat(2, 1fr); }
+      .lessons-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .stats-band { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .achieve-grid, .lessons-grid { grid-template-columns: 1fr; }
+      .mission-band, .team-section, .achievements-section, .lessons-band { padding-left: 24px; padding-right: 24px; }
+    }
+
   </style>
 </head>
 <body>
@@ -457,15 +530,19 @@
 <div class="stats-band">
   <div class="stat-item reveal">
     <div class="stat-num">25<span>+</span></div>
-    <div class="stat-label">Years of Experience</div>
+    <div class="stat-label">Years of Operation</div>
   </div>
   <div class="stat-item reveal">
     <div class="stat-num">14</div>
     <div class="stat-label">Clinical Trials Completed</div>
   </div>
   <div class="stat-item reveal">
-    <div class="stat-num">4</div>
-    <div class="stat-label">Active Research Sites</div>
+    <div class="stat-num">21</div>
+    <div class="stat-label">Districts Covered</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">1M<span>+</span></div>
+    <div class="stat-label">People Reached</div>
   </div>
   <div class="stat-item reveal">
     <div class="stat-num">80<span>+</span></div>
@@ -477,25 +554,73 @@
 <section class="about-section" id="about">
   <div class="about-grid">
     <div class="about-img-col reveal">
-      <img src="https://rindaubuzima.rw/assets/img/partnership-meeting.jpg" alt="Rinda Ubuzima team collaboration" class="about-img" />
+      <img src="https://rindaubuzima.rw/assets/img/team-celebration.jpg" alt="Rinda Ubuzima team" class="about-img" />
       <div class="about-accent"></div>
     </div>
     <div class="about-content reveal">
       <div class="section-tag">Who We Are</div>
-      <h2>A Trusted Partner in <em>Health Research</em> Since 2001</h2>
-      <p class="section-lead">Rinda Ubuzima is a Rwanda-based Local Non-Governmental Organization registered with the Rwanda Governance Board. With a strong countrywide footprint and regional engagement in East and Central Africa, we translate scientific evidence into practical health solutions.</p>
+      <h2>From <em>Projet Ubuzima</em> to a National Health Research Leader</h2>
+      <p class="section-lead">Founded in 2001 by Prof. Joep Lange of the University of Amsterdam, Rinda Ubuzima has grown from a small research project into one of Rwanda's most trusted health research organizations — registered as a Local NGO by the Rwanda Governance Board and active across all 21 districts of the country.</p>
       <br />
-      <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.8;">Our mission is to execute all activities that promote health in Rwanda — through clinical trials, social science studies, and community engagement. We bring together researchers globally and work closely with the Rwanda Ministry of Health to tackle critical public health challenges.</p>
-      <div class="about-pills">
-        <span class="pill">Clinical Research</span>
-        <span class="pill">Community Engagement</span>
-        <span class="pill">Health Promotion</span>
-        <span class="pill">Capacity Building</span>
-        <span class="pill">Social Science</span>
+      <p style="font-size:0.93rem; color:var(--text-muted); line-height:1.85;">We work in close collaboration with the Rwanda Ministry of Health, national institutions, and over 30 international partners to translate scientific evidence into practical solutions that promote health, prevent disease, and improve treatment outcomes across East and Central Africa.</p>
+
+      <div class="mini-milestones">
+        <div class="mini-ms">
+          <div class="ms-dot">01</div>
+          <div>
+            <div class="ms-year">2001 · Foundation</div>
+            <div class="ms-text">Founded as Projet Ubuzima by Prof. Joep Lange, University of Amsterdam.</div>
+          </div>
+        </div>
+        <div class="mini-ms">
+          <div class="ms-dot">02</div>
+          <div>
+            <div class="ms-year">2004 · Expansion</div>
+            <div class="ms-text">Activities expanded with Prof. Janneke van de Wijgert and the IATEC team.</div>
+          </div>
+        </div>
+        <div class="mini-ms">
+          <div class="ms-dot">03</div>
+          <div>
+            <div class="ms-year">2011 · Transition</div>
+            <div class="ms-text">Transitioned from an International NGO to a Local NGO — Rinda Ubuzima.</div>
+          </div>
+        </div>
+        <div class="mini-ms">
+          <div class="ms-dot">04</div>
+          <div>
+            <div class="ms-year">2014 · Official License</div>
+            <div class="ms-text">Officially licensed by the Rwanda Governance Board as a registered Local NGO.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <a href="our-work.html" class="btn-primary" style="background:var(--green-deep); color:white; border-color:var(--green-deep); font-size:0.9rem; padding:12px 28px;">Our Full History →</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ─── VISION / MISSION BAND ─────────────────────────── -->
+<div class="mission-band">
+  <div class="mission-col reveal">
+    <div class="section-tag" style="color:var(--gold-light);">Our Vision</div>
+    <h3>A Leading Health Research Organization in Rwanda & the Region</h3>
+    <p>Rinda Ubuzima aspires to be a leading health research organization dedicated to advancing knowledge in health promotion, disease prevention, and treatment — in Rwanda and across East and Central Africa.</p>
+  </div>
+  <div class="mission-divider"></div>
+  <div class="mission-col reveal">
+    <div class="section-tag" style="color:var(--gold-light);">Our Mission & Objectives</div>
+    <h3>Executing All Activities That Promote Health in Rwanda</h3>
+    <ul>
+      <li>Bring together researchers from across the world to develop medical research in Rwanda</li>
+      <li>Conduct and implement clinical research and other studies to move medicine forward</li>
+      <li>Contribute to capacity building in clinical research at all levels</li>
+      <li>Conduct health promotion through community engagement and outreach</li>
+      <li>Collaborate closely with Rwanda Ministry of Health and key stakeholders</li>
+    </ul>
+  </div>
+</div>
 
 <!-- ─── EXPERTISE ─────────────────────────────────────── -->
 <section class="expertise-section" id="expertise">
@@ -537,6 +662,55 @@
       <div class="exp-icon">🔍</div>
       <div class="exp-title">Social Science Research</div>
       <div class="exp-desc">Understanding health behaviors and systems through rigorous social science methodology and community insight.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ────────────────────────────────────────────── -->
+<section class="team-section" id="team">
+  <div class="section-tag">Our People</div>
+  <h2 style="color:var(--white);">80+ Professionals Across <em style="color:var(--gold-light)">Every Discipline</em></h2>
+  <p class="section-lead" style="color:rgba(255,255,255,0.65); max-width:600px;">Our team is made up of research nurses, laboratory scientists, physicians, data specialists, community officers, pharmacists, and administrators — all working together toward a single mission.</p>
+  <div class="team-grid">
+    <div class="team-tile reveal">
+      <div class="team-pct">36.3%</div>
+      <div class="team-role">Research Nurses</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:36.3%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">21.3%</div>
+      <div class="team-role">Laboratory Personnel</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:21.3%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">11.3%</div>
+      <div class="team-role">Data Personnel</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:11.3%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">11.3%</div>
+      <div class="team-role">Administration</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:11.3%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">8.8%</div>
+      <div class="team-role">Study Physicians</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:8.8%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">7.5%</div>
+      <div class="team-role">Community Officers</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:7.5%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">2.5%</div>
+      <div class="team-role">Pharmacists</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:2.5%"></div></div>
+    </div>
+    <div class="team-tile reveal">
+      <div class="team-pct">1.3%</div>
+      <div class="team-role">Quality Control</div>
+      <div class="team-bar"><div class="team-bar-fill" style="width:1.3%"></div></div>
     </div>
   </div>
 </section>
@@ -585,6 +759,93 @@
     </div>
   </div>
 </section>
+
+<!-- ─── ACHIEVEMENTS ──────────────────────────────────── -->
+<section class="achievements-section" id="achievements">
+  <div class="section-tag">Our Impact</div>
+  <h2>Community & <em>Public Health Impact</em></h2>
+  <p class="section-lead">Beyond clinical trials, Rinda Ubuzima delivers measurable public health impact across Rwanda through targeted programs, digital innovation, and systems strengthening.</p>
+  <div class="achieve-grid">
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">⚠️</div>
+        <div class="achieve-icon-title">Ebola Vaccination Awareness</div>
+      </div>
+      <div class="achieve-body">
+        <p>Led community mobilisation for the UMURINZI Program, Rwanda's national Ebola vaccination campaign. Operated 14 vaccination sites across Rubavu and Rusizi — Rwanda's highest-risk border districts — and adapted engagement strategies throughout the COVID-19 pandemic.</p>
+      </div>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">🦠</div>
+        <div class="achieve-icon-title">COVID-19 Digital Response</div>
+      </div>
+      <div class="achieve-body">
+        <p>Deployed digital health tools for Community Health Workers across 4 districts through the e-ASCov project, commissioned by the Rwanda Biomedical Centre. Trained 400 CHWs and reached over 6,000 community members with surveillance and care support during the pandemic.</p>
+      </div>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">🔴</div>
+        <div class="achieve-icon-title">HIV Prevention</div>
+      </div>
+      <div class="achieve-body">
+        <p>Conducted the Dapivirine Ring clinical trial — a women-initiated HIV prevention tool — at our Kigali research site. Following a positive EMA scientific opinion in 2020, the Dapivirine Ring was approved by Rwanda FDA, expanding prevention choices for Rwandan women.</p>
+      </div>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">💉</div>
+        <div class="achieve-icon-title">Immunization Strengthening</div>
+      </div>
+      <div class="achieve-body">
+        <p>Supported routine and emergency vaccination programs across all 21 districts of Rwanda. Our community engagement teams have reached over 1 million people through immunization awareness, mobilisation, and follow-up activities.</p>
+      </div>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">🏥</div>
+        <div class="achieve-icon-title">Health Systems Strengthening</div>
+      </div>
+      <div class="achieve-body">
+        <p>Built research capacity across 100+ health facilities in Rwanda. Through the Female & Family [e] Education program, trained 250 midwives and 1,330 Community Health Workers in maternal and newborn care — accredited by the Rwandan Midwives Association in 2016.</p>
+      </div>
+    </div>
+    <div class="achieve-card reveal">
+      <div class="achieve-icon-row">
+        <div class="achieve-icon">📖</div>
+        <div class="achieve-icon-title">Knowledge Dissemination</div>
+      </div>
+      <div class="achieve-body">
+        <p>Published peer-reviewed research in journals including BMC Public Health, PLOS One, and Frontiers in Global Women's Health. Represented Rwanda at CPHIA 2022 in Kigali — awarded 2nd Runner-Up Exhibitor — and engaged with Wellcome Trust, CEPI, and the EU–Rwanda Business Forum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LESSONS LEARNED ───────────────────────────────── -->
+<div class="lessons-band">
+  <div class="section-tag">Lessons Learned</div>
+  <h2>What 25 Years Has <em>Taught Us</em></h2>
+  <div class="lessons-grid">
+    <div class="lesson-item reveal">
+      <div class="lesson-num">01</div>
+      <div class="lesson-text">Community trust is the foundation of every successful health research and intervention program. Without it, neither recruitment nor retention is sustainable.</div>
+    </div>
+    <div class="lesson-item reveal">
+      <div class="lesson-num">02</div>
+      <div class="lesson-text">Strong government collaboration ensures that our research aligns with national health priorities and translates into real policy and practice.</div>
+    </div>
+    <div class="lesson-item reveal">
+      <div class="lesson-num">03</div>
+      <div class="lesson-text">Local-language communication and culturally appropriate messaging significantly increase community reach, engagement, and lasting behaviour change.</div>
+    </div>
+    <div class="lesson-item reveal">
+      <div class="lesson-num">04</div>
+      <div class="lesson-text">Flexible, adaptive approaches are critical. The ability to revise strategies during disruptions — like COVID-19 — separates effective organizations from ineffective ones.</div>
+    </div>
+  </div>
+</div>
 
 <!-- ─── RECOGNITION STRIP ───────────────────────────────── -->
 <div style="background:var(--red-deep); padding:40px 72px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
