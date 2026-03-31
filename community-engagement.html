@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Engagement — Rinda Ubuzima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep: #6B0808; --green-mid: #8C1010; --green-light: #B01C1C;
+      --gold-light: #ffd5d5; --cream: #FFF5F5; --cream-dark: #FADDDD;
+      --charcoal: #1e1e1e; --text-muted: #6a4848; --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); color: var(--charcoal); background: var(--white); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(107, 8, 8, 0.97); backdrop-filter: blur(10px);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 48px; height:70px; border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+    .nav-logo img { height: 40px; }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration:none; font-size:.88rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { background: var(--white); color: var(--green-deep)!important; padding: 9px 22px; border-radius: 4px; font-weight: 600!important; }
+    .hero {
+      background: var(--green-deep); color:white; padding:140px 72px 90px;
+      position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0; opacity:.05;
+      background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%);
+      background-size:28px 28px;
+    }
+    .hero-inner { position:relative; z-index:1; max-width:900px; }
+    .hero-tag {
+      display:inline-flex; align-items:center; gap:10px; margin-bottom:26px;
+      background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35);
+      color: var(--gold-light); font-size: .78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+      padding:7px 16px; border-radius:100px;
+    }
+    .hero-tag::before { content:''; width:6px; height:6px; border-radius:50%; background:white; }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem,4vw,4rem); line-height:1.14; margin-bottom:22px; }
+    .hero p { font-size:1.03rem; color:rgba(255,255,255,.74); max-width:720px; line-height:1.8; }
+    .section { padding: 84px 72px; }
+    .section-tag {
+      display:inline-flex; align-items:center; gap:8px; color: var(--green-light);
+      font-size:.78rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px;
+    }
+    .section-tag::before { content:''; width:24px; height:2px; background: var(--green-light); }
+    h2 { font-family: var(--serif); font-size: clamp(2rem,3vw,2.8rem); color: var(--green-deep); line-height:1.2; margin-bottom:18px; }
+    .lead { font-size:1.02rem; color: var(--text-muted); line-height:1.8; max-width:760px; }
+    .split { display:grid; grid-template-columns: 1.1fr .9fr; gap:56px; align-items:start; }
+    .panel {
+      background: var(--cream); border:1px solid var(--cream-dark); border-radius:10px; padding:30px 28px;
+    }
+    .panel h3 { font-family: var(--serif); color: var(--green-deep); margin-bottom:14px; font-size:1.3rem; }
+    .panel ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .panel li { color: var(--text-muted); line-height:1.7; display:flex; gap:12px; }
+    .panel li::before { content:'→'; color: var(--green-light); font-weight:700; }
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; margin-top:42px; }
+    .card, .example {
+      border:1px solid var(--cream-dark); border-radius:10px; background:white; padding:28px 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+    }
+    .card h3, .example h3 { font-family: var(--serif); color: var(--green-deep); font-size:1.18rem; margin-bottom:10px; }
+    .card p, .example p { color: var(--text-muted); line-height:1.75; font-size:.93rem; }
+    .example-kicker { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color: var(--green-light); margin-bottom:12px; }
+    .examples-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; margin-top:36px; }
+    .cta {
+      background: var(--green-mid); color:white; padding:80px 72px; display:flex; justify-content:space-between; align-items:center; gap:32px;
+    }
+    .cta h2 { color:white; margin-bottom:12px; }
+    .cta p { color: rgba(255,255,255,.72); line-height:1.8; max-width:640px; }
+    .btn {
+      display:inline-block; text-decoration:none; background:white; color:var(--green-deep);
+      padding:14px 28px; border-radius:4px; font-weight:600;
+    }
+    footer {
+      background: var(--green-deep); color: rgba(255,255,255,.75); padding: 50px 72px 32px;
+    }
+    .foot { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .foot a { color: rgba(255,255,255,.75); text-decoration:none; }
+    .reveal { opacity:0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (max-width: 1024px) {
+      .split, .cards, .examples-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display:none; }
+      .hero, .section, .cta, footer { padding-left:24px; padding-right:24px; }
+      .split, .cards, .examples-grid { grid-template-columns:1fr; }
+      .cta { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#expertise">Expertise</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#news">News</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Field Delivery Expertise</div>
+    <h1>🤝 Community Engagement & Outreach</h1>
+    <p>Beyond clinical research, Rinda Ubuzima publicly describes community engagement and outreach as a core area of expertise. This includes health promotion, mobilisation, sensitisation, recruitment support, and community-centred implementation across Rwanda.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-tag">Overview</div>
+  <div class="split">
+    <div>
+      <h2>Community Engagement</h2>
+      <p class="lead">Beyond clinical research, Rinda Ubuzima publicly describes community engagement and outreach as a core area of expertise. This includes health promotion, mobilisation, sensitisation, recruitment support, and community-centred implementation across Rwanda.</p>
+    </div>
+    <div class="panel reveal">
+      <h3>What this includes</h3>
+      <ul><li>Community mobilisation and sensitisation</li>
+<li>Recruitment and retention support for studies and programmes</li>
+<li>Health promotion and outreach activities</li>
+<li>Behaviour-oriented communication in local context</li>
+<li>Implementation support across districts and communities</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--cream);">
+  <div class="section-tag">Why It Matters</div>
+  <h2>Capability that supports <em>trusted delivery</em></h2>
+  <div class="cards">
+    <div class="card reveal"><h3>Trust-building</h3><p>Community-centred delivery helps programmes move beyond awareness into sustained participation, follow-up, and uptake.</p></div>
+<div class="card reveal"><h3>Implementation strength</h3><p>Outreach capability is essential for real-world public health delivery, especially where trust, local language, and social context shape results.</p></div>
+<div class="card reveal"><h3>Partner value</h3><p>For funders and government partners, strong engagement systems reduce implementation friction and improve programme responsiveness.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-tag">Selected Examples</div>
+  <h2>How this expertise shows up in <em>real work</em></h2>
+  <div class="examples-grid">
+    <div class="example reveal"><div class="example-kicker">Ebola preparedness</div><h3>UMURINZI vaccination engagement</h3><p>The homepage content highlights work on mobilisation, sensitisation, recruitment, and retention across vaccination sites in high-priority border districts.</p></div>
+<div class="example reveal"><div class="example-kicker">COVID-19 response</div><h3>Digital health worker support</h3><p>Rinda Ubuzima’s e-ASCov work shows how community-facing delivery can be combined with training and surveillance support.</p></div>
+<div class="example reveal"><div class="example-kicker">Health promotion</div><h3>Outreach as part of institutional mission</h3><p>Both the official site and LinkedIn description present outreach and community engagement as central to the organisation’s mission.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>Looking for a Rwanda-based partner?</h2>
+    <p>Rinda Ubuzima combines local delivery experience, technical research capacity, and community-centred implementation to support serious health programmes and studies.</p>
+  </div>
+  <a class="btn" href="index.html#contact">Partner With Us</a>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>A Rwanda-based partner advancing health through clinical research, implementation support, and community engagement since 2001.</div>
+    <div><a href="index.html">← Back to Home</a></div>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=> {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
