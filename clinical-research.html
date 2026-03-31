@@ -1,27 +1,184 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Clinical Research — Rinda Ubuzima</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--green-deep:#6B0808;--green-mid:#8C1010;--green-light:#B01C1C;--gold-light:#ffd5d5;--cream:#FFF5F5;--cream-dark:#FADDDD;--charcoal:#1e1e1e;--text-muted:#6a4848;--white:#fff;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',sans-serif}html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);background:var(--white)}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;background:rgba(107,8,8,.97);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid rgba(255,255,255,.2)}.nav-logo img{height:40px}.nav-links{display:flex;align-items:center;gap:32px;list-style:none}.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase}.nav-cta{background:var(--white);color:var(--green-deep)!important;padding:9px 22px;border-radius:4px;font-weight:600!important}
-.hero{position:relative;overflow:hidden;padding:132px 72px 86px;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));color:var(--white)}.hero::before{content:'';position:absolute;inset:0;opacity:.06;background-image:repeating-linear-gradient(45deg,white 0,white 1px,transparent 0,transparent 50%);background-size:28px 28px}.hero-inner{position:relative;z-index:1;max-width:1120px;margin:0 auto}.breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:28px;color:rgba(255,255,255,.62);font-size:.82rem;letter-spacing:.04em}.breadcrumbs a{color:rgba(255,255,255,.72);text-decoration:none}.hero-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--gold-light);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px}.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--white)}h1{font-family:var(--serif);font-size:clamp(2.5rem,4vw,4.1rem);line-height:1.12;margin-bottom:18px;max-width:860px}.hero-sub{max-width:760px;color:rgba(255,255,255,.75);line-height:1.82;font-size:1.03rem}.hero-metrics{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:850px}.metric{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:18px 20px}.metric strong{display:block;font-family:var(--serif);font-size:1.5rem;margin-bottom:4px}.metric span{color:rgba(255,255,255,.66);font-size:.9rem}.subnav{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}.subnav a{text-decoration:none;color:var(--green-deep);background:var(--cream);border:1px solid var(--cream-dark);padding:10px 14px;border-radius:999px;font-size:.86rem;font-weight:600}
-.section{padding:88px 72px}.container{max-width:1120px;margin:0 auto}.section-tag{display:inline-flex;align-items:center;gap:8px;color:var(--green-light);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}.section-tag::before{content:'';width:24px;height:2px;background:var(--green-light)}h2{font-family:var(--serif);font-size:clamp(2rem,3vw,2.8rem);color:var(--green-deep);line-height:1.2;margin-bottom:16px}h2 em{color:var(--green-light);font-style:italic}.lead{color:var(--text-muted);line-height:1.84;font-size:1rem;max-width:760px}
-.overview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}.panel{background:var(--cream);border:1px solid var(--cream-dark);border-radius:12px;padding:30px;box-shadow:0 8px 24px rgba(107,8,8,.06)}.panel h3{font-family:var(--serif);color:var(--green-deep);font-size:1.28rem;margin-bottom:14px}.panel ul{list-style:none;display:flex;flex-direction:column;gap:12px}.panel li{display:flex;gap:12px;color:var(--text-muted);line-height:1.72}.panel li::before{content:'→';color:var(--green-light);font-weight:700}
-.feature-grid,.examples-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}.feature-card,.example-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:12px;padding:26px 24px;box-shadow:0 8px 24px rgba(0,0,0,.05)}.feature-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(107,8,8,.1)}.feature-top{display:flex;gap:12px;align-items:center;margin-bottom:12px}.mini-icon{width:38px;height:38px;border-radius:10px;background:rgba(107,8,8,.08);color:var(--green-deep);display:flex;align-items:center;justify-content:center;font-size:1.05rem}.feature-card h3,.example-card h3{font-family:var(--serif);color:var(--green-deep);font-size:1.14rem;margin-bottom:10px;line-height:1.35}.feature-card p,.example-card p{color:var(--text-muted);line-height:1.75;font-size:.93rem}.example-kicker{display:inline-block;background:rgba(107,8,8,.08);color:var(--green-deep);border-radius:100px;padding:6px 12px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-.cta{background:var(--green-mid);padding:80px 72px;color:var(--white)}.cta-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:28px;align-items:center}.cta h2{color:var(--white);margin-bottom:12px}.cta p{color:rgba(255,255,255,.72);line-height:1.78;max-width:700px}.btn{display:inline-block;text-decoration:none;background:var(--white);color:var(--green-deep);padding:14px 28px;border-radius:4px;font-weight:600;white-space:nowrap}
-footer{background:var(--green-deep);color:rgba(255,255,255,.75);padding:56px 72px 34px}.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:28px}.footer-brand p{line-height:1.8;color:rgba(255,255,255,.62);max-width:400px}.footer-col h4{color:var(--gold-light);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}.footer-col a{color:rgba(255,255,255,.7);text-decoration:none}.footer-bottom{max-width:1120px;margin:28px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;color:rgba(255,255,255,.42);font-size:.84rem;flex-wrap:wrap}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
-@media (max-width:1024px){.hero-metrics,.feature-grid,.examples-grid{grid-template-columns:1fr 1fr}.overview-grid,.footer-grid{grid-template-columns:1fr}.cta-inner{flex-direction:column;align-items:flex-start}}
-@media (max-width:768px){nav{padding:0 24px}.nav-links{display:none}.hero,.section,.cta,footer{padding-left:24px;padding-right:24px}.hero-metrics,.feature-grid,.examples-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
-</style></head><body>
-<nav><a href="index.html" class="nav-logo"><img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" /></a><ul class="nav-links"><li><a href="index.html#about">About</a></li><li><a href="index.html#expertise">Expertise</a></li><li><a href="index.html#activities">Activities</a></li><li><a href="index.html#partners">Partners</a></li><li><a href="index.html#news">News</a></li><li><a href="index.html#contact" class="nav-cta">Contact Us</a></li></ul></nav>
-<section class="hero"><div class="hero-inner"><div class="breadcrumbs"><a href="index.html">Home</a><span>•</span><a href="index.html#expertise">Expertise</a><span>•</span><span>Clinical Research</span></div><div class="hero-tag">Technical Expertise</div><h1>🔬 Clinical Research</h1><p class="hero-sub">Rinda Ubuzima conducts and supports ethical clinical research in Rwanda, with experience spanning HIV, reproductive health, COVID-19, malaria, and other priority health areas. Its public profiles describe a research clinic and laboratory in Kigali and a long-standing focus on clinical trials and implementation research.</p><div class="hero-metrics"><div class="metric"><strong>Rwanda-based</strong><span>Local implementation and research presence</span></div><div class="metric"><strong>21 districts</strong><span>National reach reflected across public profile</span></div><div class="metric"><strong>Partner-ready</strong><span>Built for collaboration, quality, and delivery</span></div></div><div class="subnav"><a href="#overview">Overview</a><a href="#value">Why it matters</a><a href="#examples">Examples</a></div></div></section>
-<section class="section" id="overview"><div class="container"><div class="section-tag">Overview</div><div class="overview-grid"><div><h2>Clinical Research</h2><p class="lead">Rinda Ubuzima conducts and supports ethical clinical research in Rwanda, with experience spanning HIV, reproductive health, COVID-19, malaria, and other priority health areas. Its public profiles describe a research clinic and laboratory in Kigali and a long-standing focus on clinical trials and implementation research.</p></div><aside class="panel reveal"><h3>What this includes</h3><ul><li>Protocol implementation and site coordination</li><li>Participant recruitment, retention, and follow-up</li><li>Research clinic operations in Kigali</li><li>Support for vaccine, diagnostic, and therapeutic studies</li><li>Collaboration with national and international research partners</li></ul></aside></div></div></section>
-<section class="section" id="value" style="background:var(--cream);"><div class="container"><div class="section-tag">Why It Matters</div><h2>Capability that supports <em>trusted delivery</em></h2><div class="feature-grid"><article class="feature-card reveal"><div class="feature-top"><span class="mini-icon">🔬</span><h3>Scientific rigor</h3></div><p>Clinical research capacity helps partners trust that studies can be delivered with strong operational discipline, participant safeguards, and aligned site processes.</p></article><article class="feature-card reveal"><div class="feature-top"><span class="mini-icon">🔬</span><h3>Local execution</h3></div><p>As a Rwanda-based organization, Rinda Ubuzima offers context-aware implementation rooted in national priorities and day-to-day field realities.</p></article><article class="feature-card reveal"><div class="feature-top"><span class="mini-icon">🔬</span><h3>Regional readiness</h3></div><p>Recent partnership and preparedness activity points to a growing role in Africa-led clinical research collaboration and emergency research ecosystems.</p></article></div></div></section>
-<section class="section" id="examples"><div class="container"><div class="section-tag">Selected Examples</div><h2>How this expertise shows up in <em>real work</em></h2><div class="examples-grid"><article class="example-card reveal"><div class="example-kicker">HIV prevention</div><h3>Dapivirine Ring and related studies</h3><p>Public information highlights Rinda Ubuzima’s contribution to women-centred HIV prevention research, including recruitment, counselling, and follow-up in Rwanda.</p></article><article class="example-card reveal"><div class="example-kicker">Study collaboration</div><h3>Malaria and broader partner discussions</h3><p>Public partnership updates describe discussions around malaria-oriented studies and wider research collaboration opportunities.</p></article><article class="example-card reveal"><div class="example-kicker">Preparedness</div><h3>VIBRI-Africa / RPECA participation</h3><p>Recent regional workshop participation shows engagement in research preparedness, outbreak studies, and Africa-led collaboration.</p></article></div></div></section>
-<section class="cta"><div class="cta-inner"><div><h2>Looking for a Rwanda-based partner?</h2><p>Rinda Ubuzima combines local delivery experience, technical research capacity, and community-centred implementation to support serious health programmes and studies.</p></div><a class="btn" href="index.html#contact">Partner With Us</a></div></section>
-<footer><div class="footer-grid"><div class="footer-brand"><p>A Rwanda-based partner advancing health through clinical research, implementation support, and community engagement since 2001.</p></div><div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#expertise">Expertise</a></li><li><a href="index.html#activities">Activities</a></li><li><a href="index.html#partners">Partners</a></li></ul></div><div class="footer-col"><h4>Other Expertise</h4><ul><li><a href="clinical-research.html">Clinical Research</a></li><li><a href="community-engagement.html">Community Engagement</a></li><li><a href="laboratory-services.html">Laboratory Services</a></li><li><a href="data-management.html">Data Management</a></li><li><a href="capacity-building.html">Capacity Building</a></li><li><a href="social-science-research.html">Social Science Research</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Rinda Ubuzima. All rights reserved.</span><span><a href="index.html">Back to home</a></span></div></footer>
-<script>const reveals=document.querySelectorAll('.reveal');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');})},{threshold:.12});reveals.forEach(el=>observer.observe(el));</script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Research — Rinda Ubuzima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep: #6B0808; --green-mid: #8C1010; --green-light: #B01C1C;
+      --gold-light: #ffd5d5; --cream: #FFF5F5; --cream-dark: #FADDDD;
+      --charcoal: #1e1e1e; --text-muted: #6a4848; --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); color: var(--charcoal); background: var(--white); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(107, 8, 8, 0.97); backdrop-filter: blur(10px);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 48px; height:70px; border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+    .nav-logo img { height: 40px; }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration:none; font-size:.88rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { background: var(--white); color: var(--green-deep)!important; padding: 9px 22px; border-radius: 4px; font-weight: 600!important; }
+    .hero {
+      background: var(--green-deep); color:white; padding:140px 72px 90px;
+      position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0; opacity:.05;
+      background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%);
+      background-size:28px 28px;
+    }
+    .hero-inner { position:relative; z-index:1; max-width:900px; }
+    .hero-tag {
+      display:inline-flex; align-items:center; gap:10px; margin-bottom:26px;
+      background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35);
+      color: var(--gold-light); font-size: .78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+      padding:7px 16px; border-radius:100px;
+    }
+    .hero-tag::before { content:''; width:6px; height:6px; border-radius:50%; background:white; }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem,4vw,4rem); line-height:1.14; margin-bottom:22px; }
+    .hero p { font-size:1.03rem; color:rgba(255,255,255,.74); max-width:720px; line-height:1.8; }
+    .section { padding: 84px 72px; }
+    .section-tag {
+      display:inline-flex; align-items:center; gap:8px; color: var(--green-light);
+      font-size:.78rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px;
+    }
+    .section-tag::before { content:''; width:24px; height:2px; background: var(--green-light); }
+    h2 { font-family: var(--serif); font-size: clamp(2rem,3vw,2.8rem); color: var(--green-deep); line-height:1.2; margin-bottom:18px; }
+    .lead { font-size:1.02rem; color: var(--text-muted); line-height:1.8; max-width:760px; }
+    .split { display:grid; grid-template-columns: 1.1fr .9fr; gap:56px; align-items:start; }
+    .panel {
+      background: var(--cream); border:1px solid var(--cream-dark); border-radius:10px; padding:30px 28px;
+    }
+    .panel h3 { font-family: var(--serif); color: var(--green-deep); margin-bottom:14px; font-size:1.3rem; }
+    .panel ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .panel li { color: var(--text-muted); line-height:1.7; display:flex; gap:12px; }
+    .panel li::before { content:'→'; color: var(--green-light); font-weight:700; }
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; margin-top:42px; }
+    .card, .example {
+      border:1px solid var(--cream-dark); border-radius:10px; background:white; padding:28px 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+    }
+    .card h3, .example h3 { font-family: var(--serif); color: var(--green-deep); font-size:1.18rem; margin-bottom:10px; }
+    .card p, .example p { color: var(--text-muted); line-height:1.75; font-size:.93rem; }
+    .example-kicker { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color: var(--green-light); margin-bottom:12px; }
+    .examples-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; margin-top:36px; }
+    .cta {
+      background: var(--green-mid); color:white; padding:80px 72px; display:flex; justify-content:space-between; align-items:center; gap:32px;
+    }
+    .cta h2 { color:white; margin-bottom:12px; }
+    .cta p { color: rgba(255,255,255,.72); line-height:1.8; max-width:640px; }
+    .btn {
+      display:inline-block; text-decoration:none; background:white; color:var(--green-deep);
+      padding:14px 28px; border-radius:4px; font-weight:600;
+    }
+    footer {
+      background: var(--green-deep); color: rgba(255,255,255,.75); padding: 50px 72px 32px;
+    }
+    .foot { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .foot a { color: rgba(255,255,255,.75); text-decoration:none; }
+    .reveal { opacity:0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (max-width: 1024px) {
+      .split, .cards, .examples-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display:none; }
+      .hero, .section, .cta, footer { padding-left:24px; padding-right:24px; }
+      .split, .cards, .examples-grid { grid-template-columns:1fr; }
+      .cta { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#expertise">Expertise</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#news">News</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Technical Expertise</div>
+    <h1>🔬 Clinical Research</h1>
+    <p>Rinda Ubuzima conducts and supports ethical clinical research in Rwanda, with experience spanning HIV, reproductive health, COVID-19, malaria, and other priority health areas. Its public profiles describe a research clinic and laboratory in Kigali and a long-standing focus on clinical trials and implementation research.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-tag">Overview</div>
+  <div class="split">
+    <div>
+      <h2>Clinical Research</h2>
+      <p class="lead">Rinda Ubuzima conducts and supports ethical clinical research in Rwanda, with experience spanning HIV, reproductive health, COVID-19, malaria, and other priority health areas. Its public profiles describe a research clinic and laboratory in Kigali and a long-standing focus on clinical trials and implementation research.</p>
+    </div>
+    <div class="panel reveal">
+      <h3>What this includes</h3>
+      <ul><li>Protocol implementation and site coordination</li>
+<li>Participant recruitment, retention, and follow-up</li>
+<li>Research clinic operations in Kigali</li>
+<li>Support for vaccine, diagnostic, and therapeutic studies</li>
+<li>Collaboration with national and international research partners</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--cream);">
+  <div class="section-tag">Why It Matters</div>
+  <h2>Capability that supports <em>trusted delivery</em></h2>
+  <div class="cards">
+    <div class="card reveal"><h3>Scientific rigor</h3><p>Clinical research capacity gives partners confidence that studies can be implemented with operational discipline, participant safeguards, and aligned site processes.</p></div>
+<div class="card reveal"><h3>Local execution</h3><p>As a Rwanda-based organization, Rinda Ubuzima offers context-aware implementation rooted in national priorities and day-to-day field realities.</p></div>
+<div class="card reveal"><h3>Regional readiness</h3><p>Recent partnership and preparedness activities indicate a growing role in Africa-led clinical research collaboration and emergency research ecosystems.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-tag">Selected Examples</div>
+  <h2>How this expertise shows up in <em>real work</em></h2>
+  <div class="examples-grid">
+    <div class="example reveal"><div class="example-kicker">HIV prevention</div><h3>Dapivirine Ring and related studies</h3><p>Public information highlights Rinda Ubuzima’s contribution to women-centred HIV prevention research, supporting recruitment, counselling, and follow-up in Rwanda.</p></div>
+<div class="example reveal"><div class="example-kicker">Malaria and broader research collaboration</div><h3>Ongoing study partnerships</h3><p>LinkedIn updates describe discussions with Novartis around malaria-oriented studies and broader collaboration opportunities.</p></div>
+<div class="example reveal"><div class="example-kicker">Preparedness and networks</div><h3>VIBRI-Africa / RPECA participation</h3><p>Recent regional workshop participation shows engagement in research preparedness, coordinated outbreak studies, and Africa-led collaboration.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>Looking for a Rwanda-based partner?</h2>
+    <p>Rinda Ubuzima combines local delivery experience, technical research capacity, and community-centred implementation to support serious health programmes and studies.</p>
+  </div>
+  <a class="btn" href="index.html#contact">Partner With Us</a>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>A Rwanda-based partner advancing health through clinical research, implementation support, and community engagement since 2001.</div>
+    <div><a href="index.html">← Back to Home</a></div>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=> {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
