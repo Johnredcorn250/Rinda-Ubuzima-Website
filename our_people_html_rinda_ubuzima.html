@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our People — Rinda Ubuzima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep: #6B0808;
+      --green-mid: #8C1010;
+      --green-light: #B01C1C;
+      --red-deep: #560606;
+      --gold: #ffffff;
+      --gold-light: #ffd5d5;
+      --cream: #FFF5F5;
+      --cream-dark: #FADDDD;
+      --charcoal: #1e1e1e;
+      --text-muted: #6a4848;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--charcoal); background: var(--white); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(107, 8, 8, 0.97);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 70px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .nav-logo img { height: 40px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--white); color: var(--green-deep) !important;
+      padding: 9px 22px; border-radius: 4px; font-weight: 600 !important;
+    }
+
+    .page-hero {
+      background: var(--green-deep);
+      padding: 140px 72px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+      background-size: 28px 28px;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-bottom: 24px;
+      position: relative; z-index: 1;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .page-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+      max-width: 12ch;
+    }
+    .page-hero h1 em { color: var(--gold-light); font-style: italic; }
+    .page-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      max-width: 760px;
+      position: relative; z-index: 1;
+    }
+
+    .stats-band {
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 56px 72px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 24px;
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--green-deep);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-num span { color: var(--green-light); }
+    .stat-label {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    section { padding: 88px 72px; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--green-light); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .section-tag::before { content: ''; width: 24px; height: 2px; background: var(--green-light); }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--green-deep);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    h2 em { color: var(--green-light); font-style: italic; }
+    .section-lead {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 760px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    }
+    .info-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .info-card p:last-child { margin-bottom: 0; }
+    .highlight-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .highlight-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .highlight-list li:last-child { border-bottom: none; }
+    .highlight-list li::before {
+      content: '•';
+      color: var(--green-light);
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .departments-section { background: var(--green-deep); }
+    .departments-section .section-tag { color: var(--gold-light); }
+    .departments-section h2 { color: var(--white); }
+    .departments-section .section-lead { color: rgba(255,255,255,0.68); }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .dept-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 30px 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .dept-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--white);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .dept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.11);
+    }
+    .dept-card:hover::before { transform: scaleX(1); }
+    .dept-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .dept-card h3 {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .dept-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .dept-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .dept-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--gold-light);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .people-values {
+      background: var(--cream);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 34px rgba(107,8,8,0.1);
+    }
+    .value-card h3 {
+      font-family: var(--serif);
+      color: var(--green-deep);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .cta-section {
+      background: var(--green-mid);
+      padding: 88px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content h2 { color: var(--white); margin-bottom: 14px; }
+    .cta-content p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 620px;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--green-deep);
+      padding: 14px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 2px solid var(--white);
+      transition: all 0.25s;
+    }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.35);
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.75);
+      padding: 52px 72px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.88rem;
+    }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 1100px) {
+      .dept-grid, .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .page-hero, section, .stats-band, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 22px; }
+      .dept-grid, .values-grid { grid-template-columns: 1fr; }
+      .cta-section { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 520px) {
+      .stats-band { grid-template-columns: 1fr; }
+      .cta-actions { width: 100%; }
+      .cta-actions a { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="our-work.html">Our Work</a></li>
+    <li><a href="index.html#expertise">Expertise</a></li>
+    <li><a href="#departments" class="active">Our People</a></li>
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Our People</span>
+  </div>
+  <h1>Our People & <em>Departments</em></h1>
+  <p>Rinda Ubuzima’s strength comes from a multidisciplinary team working across research, implementation, quality systems, communication, and community engagement. This page presents our people through the departments that make our work possible.</p>
+</div>
+
+<div class="stats-band">
+  <div class="stat-item reveal">
+    <div class="stat-num">80<span>+</span></div>
+    <div class="stat-label">Professionals Across Departments</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Core Departments</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">21</div>
+    <div class="stat-label">Districts Reached Through Programmes</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">25<span>+</span></div>
+    <div class="stat-label">Years of Institutional Experience</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-tag">Team Overview</div>
+  <h2>A Department-Based View of <em>Our People</em></h2>
+  <p class="section-lead">Rather than showing a long staff list, this page groups the organisation into its main departments. It gives visitors a cleaner understanding of how Rinda Ubuzima operates and how different professional teams contribute to research delivery, implementation quality, and community impact.</p>
+
+  <div class="intro-grid">
+    <div class="info-card reveal">
+      <p>Rinda Ubuzima’s staff structure reflects the full cycle of health research and programme delivery in Rwanda: study preparation, participant engagement, data quality, clinical implementation, administration, public communication, and quality assurance.</p>
+      <p>This department-based presentation is especially useful for partners, funders, and institutions that want to understand organisational capacity without needing a large personnel directory on the public website.</p>
+      <p>It also creates room for future expansion, should the administration later want to add team leads, photos, bios, or department-specific pages.</p>
+    </div>
+
+    <div class="info-card reveal">
+      <ul class="highlight-list">
+        <li>Shows institutional capacity in a cleaner and more strategic format.</li>
+        <li>Makes the site easier to maintain than a very large staff roster.</li>
+        <li>Helps users understand how research, outreach, data, and quality functions work together.</li>
+        <li>Can later expand into department pages or selected staff profiles if needed.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="departments-section" id="departments">
+  <div class="section-tag">Departments</div>
+  <h2>Six Core Departments Powering <em>Rinda Ubuzima</em></h2>
+  <p class="section-lead">Each department below represents a major pillar of the organisation’s work. Together, they support ethical research, strong implementation, reliable operations, and meaningful public engagement.</p>
+
+  <div class="dept-grid">
+    <article class="dept-card reveal">
+      <div class="dept-icon">🏢</div>
+      <h3>Administration</h3>
+      <p>The Administration Department keeps the institution running smoothly through finance, procurement, logistics, coordination, and operational support. It enables every programme and study to function efficiently and responsibly.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Operations</span>
+        <span class="dept-chip">Logistics</span>
+        <span class="dept-chip">Institutional Support</span>
+      </div>
+    </article>
+
+    <article class="dept-card reveal">
+      <div class="dept-icon">🔬</div>
+      <h3>Clinical Research Department</h3>
+      <p>This department supports the design, coordination, and implementation of clinical studies and trials. It plays a central role in participant-facing research delivery, scientific standards, and collaboration with partners.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Clinical Trials</span>
+        <span class="dept-chip">Study Delivery</span>
+        <span class="dept-chip">Research Excellence</span>
+      </div>
+    </article>
+
+    <article class="dept-card reveal">
+      <div class="dept-icon">📊</div>
+      <h3>Data Management Department</h3>
+      <p>The Data Management Department ensures that study and programme data are collected, organised, protected, and prepared for quality analysis. Its work is essential to research credibility and decision-making.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Data Quality</span>
+        <span class="dept-chip">Systems</span>
+        <span class="dept-chip">Analysis Support</span>
+      </div>
+    </article>
+
+    <article class="dept-card reveal">
+      <div class="dept-icon">🤝</div>
+      <h3>Community Engagement Department</h3>
+      <p>This department builds trust with communities through mobilisation, sensitisation, outreach, participant support, and sustained relationships. It is one of the strongest bridges between research and public understanding.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Mobilisation</span>
+        <span class="dept-chip">Outreach</span>
+        <span class="dept-chip">Participant Trust</span>
+      </div>
+    </article>
+
+    <article class="dept-card reveal">
+      <div class="dept-icon">📣</div>
+      <h3>Public Relations and Communication Department</h3>
+      <p>The Public Relations and Communication Department shapes how Rinda Ubuzima presents its work to communities, institutions, partners, and the public. It supports visibility, messaging, documentation, and institutional reputation.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Visibility</span>
+        <span class="dept-chip">Messaging</span>
+        <span class="dept-chip">Institutional Communication</span>
+      </div>
+    </article>
+
+    <article class="dept-card reveal">
+      <div class="dept-icon">🩺</div>
+      <h3>Nurses and Quality Control Department</h3>
+      <p>This department combines participant care, study procedures, and quality-focused oversight. It helps ensure that research activities are delivered safely, consistently, and in line with ethical and operational standards.</p>
+      <div class="dept-meta">
+        <span class="dept-chip">Participant Care</span>
+        <span class="dept-chip">Protocol Quality</span>
+        <span class="dept-chip">Standards</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="people-values">
+  <div class="section-tag">What This Structure Shows</div>
+  <h2>More Than Staff Numbers — <em>A Functional System</em></h2>
+  <p class="section-lead">Presenting people by department helps communicate that Rinda Ubuzima is not only staffed, but structured. It shows the organisation has the right professional functions in place to support research, implementation, communication, and quality delivery.</p>
+
+  <div class="values-grid">
+    <article class="value-card reveal">
+      <h3>Operational Readiness</h3>
+      <p>The presence of administration, data, communication, and quality functions demonstrates that programmes are supported by more than field execution alone.</p>
+    </article>
+    <article class="value-card reveal">
+      <h3>Research Delivery Capacity</h3>
+      <p>Clinical research, nursing, and quality-related departments signal that the institution can support technically demanding work with structure and discipline.</p>
+    </article>
+    <article class="value-card reveal">
+      <h3>Community-Centred Strength</h3>
+      <p>Dedicated engagement and communication departments show that trust-building and public understanding are built into the organisation, not treated as afterthoughts.</p>
+    </article>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="cta-content">
+    <div class="section-tag" style="color:var(--gold-light);">Next Step</div>
+    <h2>Want to Expand This Page Later?</h2>
+    <p>This structure is ready for future growth. Department heads, selected bios, photos, or department-specific pages can be added later without changing the overall design direction.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="index.html#contact" class="btn-primary">Contact Us</a>
+    <a href="our-work.html" class="btn-outline">See Our Work</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Rinda Ubuzima. All rights reserved. · KG 11 Ave, Kigali, Rwanda</span>
+  <span><a href="mailto:info@rindaubuzima.rw">info@rindaubuzima.rw</a> · <a href="tel:+250781849415">+250 781 849 415</a></span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
