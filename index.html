@@ -39,7 +39,10 @@
       padding: 0 48px; height: 70px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .nav-logo img { height: 40px; }
+    .nav-logo img {
+      height: 50px;
+      object-fit: contain;
+    }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.85); text-decoration: none;
@@ -56,7 +59,9 @@
     /* ─── HERO ────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
-      background: var(--green-deep);
+      background:
+        linear-gradient(rgba(107, 8, 8, 0.92), rgba(107, 8, 8, 0.95)),
+        url("rinda-logo.jpg") center/contain no-repeat;
       display: grid; grid-template-columns: 1fr 1fr;
       position: relative; overflow: hidden;
     }
@@ -481,7 +486,7 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" />
+    <img src="rinda-logo.jpg" alt="Rinda Ubuzima" />
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -958,7 +963,7 @@
 <footer id="contact">
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="https://rindaubuzima.rw/assets/img/logo.png" alt="Rinda Ubuzima" />
+      <img src="rinda-logo.jpg" alt="Rinda Ubuzima" />
       <p class="footer-tagline">A Rwanda-based partner advancing health through clinical research, implementation support, and community engagement since 2001.</p>
       <div class="footer-social">
         <a href="#" title="Twitter/X">𝕏</a>
