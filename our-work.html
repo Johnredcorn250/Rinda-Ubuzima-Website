@@ -801,9 +801,17 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const tabs = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.tab-panel');
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
 
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('
+    tabs.forEach(btn => {
+          btn.addEventListener('click', () => {
+                  tabs.forEach(t => t.classList.remove('active'));
+                  panels.forEach(p => p.classList.remove('active'));
+
+                                     btn.classList.add('active');
+                  const target = btn.getAttribute('data-tab');
+                  document.getElementById('tab-' + target).classList.add('active');
+          });
+    });
+</script>
